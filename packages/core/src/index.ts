@@ -520,8 +520,7 @@ class Connector {
     })
 
     try {
-      const result = await this._sendCallRequest(request)
-      return result
+      return await this._sendCallRequest(request)
     } catch (error) {
       throw error
     }
@@ -540,8 +539,7 @@ class Connector {
     })
 
     try {
-      const result = await this._sendCallRequest(request)
-      return result
+      return await this._sendCallRequest(request)
     } catch (error) {
       throw error
     }
@@ -558,8 +556,7 @@ class Connector {
     })
 
     try {
-      const result = await this._sendCallRequest(request)
-      return result
+      return await this._sendCallRequest(request)
     } catch (error) {
       throw error
     }
@@ -578,8 +575,7 @@ class Connector {
     })
 
     try {
-      const result = await this._sendCallRequest(request)
-      return result
+      return await this._sendCallRequest(request)
     } catch (error) {
       throw error
     }
@@ -596,8 +592,7 @@ class Connector {
     })
 
     try {
-      const result = await this._sendCallRequest(request)
-      return result
+      return await this._sendCallRequest(request)
     } catch (error) {
       throw error
     }
@@ -619,8 +614,23 @@ class Connector {
     })
 
     try {
-      const result = await this._sendCallRequest(request)
-      return result
+      return await this._sendCallRequest(request)
+    } catch (error) {
+      throw error
+    }
+  }
+
+  public async getAccounts () {
+    if (!this._connected) {
+      throw new Error('Session currently disconnected')
+    }
+
+    const request = this._formatRequest({
+      method: 'get_accounts'
+    })
+
+    try {
+      return await this._sendCallRequest(request)
     } catch (error) {
       throw error
     }
@@ -654,8 +664,7 @@ class Connector {
     const formattedRequest = this._formatRequest(request)
 
     try {
-      const result = await this._sendCallRequest(formattedRequest)
-      return result
+      return await this._sendCallRequest(formattedRequest)
     } catch (error) {
       throw error
     }
